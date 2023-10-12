@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<div class="container" style="background-color:light blue ">
+<div class=" container" style="background-color:light blue ">
     <div class="row">
         <div class="col">
             <div>
