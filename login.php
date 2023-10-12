@@ -3,39 +3,35 @@
                                     <!-- FOR LOGIN, IF THE DATA MATCH WITH D ONE IN DB THEN THEY SHOULD LOGIN -->
                                     <!-- IF NOT DISPLAY ERROR MESSAGE -->
 
-                                    <?php
-                                    // require_once '../includes/header.php';
-                                    ?>
-                                   
-
+                                    
 
                                     <?php
-                                    // require_once './../includes/footer.php';
+                                    // require_once './includes/footer.php';
                                     require_once 'register-inc.php';
+                                    require_once 'header.php';
+                                    // require_once './../food/login.php';
                                     ?>
 
-                                    <!DOCTYPE html>
-                                    <html lang="en">
-                                    <head>
-                                        <meta charset="UTF-8">
-                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                        <title>LOGIN</title>
-                                        <link rel="stylesheet" href="style.css">
-                                    </head>
-                                    <body>
+                                    
                                         
-                                    <div>
+                                    <div class="container d-flex justify-content-center align-items-center" style="margin-right:auto">
+                                    <div class="row">
                                     <h1>Login</h1>
                                     <p>Already have an account? <a href="registration.php">Register Here</a></p>
 
                                     <form action="login-inc.php" method="post">
-                                     
-                                        <input type="email" name="email" placeholder="E-mail">
-                                        <input type="password"name="password" placeholder=" Password">
+                                        <div class="col-lg-12 col-sm-12 w-100% mb-3">
+                                        <input type="email" name="email" placeholder="E-mail"  style="width:50%; box-shadow: 0 0 10px #000; padding:5px; border-radius:5px">
+                                        </div>
+
+                                        <div class="col-lg-12 col-sm-12 w-100% mb-3">
+                                        <input type="password"name="password" placeholder=" Password"  style="width:50%; box-shadow: 0 0 10px #000; padding:5px; border-radius:5px">
+                                        </div>
                                         <!-- <input type="password"name="cpassword" placeholder="Confirm Password"> -->
-                                        <button type="submit">Login</button>
+                                        <button type="submit" style="background-color:black; color:white; width:50%; padding:1%;">Login</button>
 
                                     </form>
+                                    </div>
                                     </div>
                                     </body>
                                     </html>

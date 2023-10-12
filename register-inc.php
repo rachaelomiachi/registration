@@ -21,6 +21,7 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
 } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $firstname) || !preg_match("/^[a-zA-Z0-9]*$/", $lastname)) {
     header("Location: registration.php?error=invalidusername");
     exit();
+    
 } elseif ($password !== $cpassword) {
 // ...
 
@@ -40,6 +41,8 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
         $rowCount = mysqli_stmt_num_rows($stmt);
+
+        var_export($rowCount);
         // exit();
         if($rowCount > 0) {
             header("location:registration.php?error=emailtaken");
@@ -56,11 +59,13 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
 
              }
              else{
-                //HASH PASSWORD AND STORE IT IN THE DB
-                $hashedpass = password_hash($password, PASSWORD_DEFAULT);
+                // HASH PASSWORD AND STORE IT IN THE DB
+                
+                $hashedpass = password_hash($password, PASSWORD_BCRYPT);
+                
                 mysqli_stmt_bind_param($stmt, "ssss", $firstname,$lastname, $email, $hashedpass);
                 mysqli_stmt_execute($stmt);
-                header("Location:registration.php?success=registered");
+                header("Location:login.php?success=registered");
                 exit();
                
                 }
@@ -68,3 +73,4 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
          }
     }
 }
+

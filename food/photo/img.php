@@ -1,0 +1,1 @@
+c:\Users\FOLIO\Downloads\pexels-adonyi-gábor-1400172.jpg

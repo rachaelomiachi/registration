@@ -1,0 +1,197 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height: 60px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px #000;
+    
+}
+
+
+ul{
+    float: right;
+    position: relative;
+    right: 10%;
+}
+
+
+ul li{
+    display: inline;
+    list-style: none;
+}
+
+
+ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    padding: 0px 0px 0px 0px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 40%;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px #000;
+    text-align: center;
+    margin: 0 auto;
+}
+
+footer p{
+    text-transform: uppercase;
+}
+
+h1{
+    text-transform: uppercase;
+}
+p a{
+    color: #666;
+}
+
+div{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input{
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 0 10px #666;
+}
+/* ////sdfghjk */
+
+body {
+    background-color: #f0f0f0; /* Change to a more neutral background color */
+  }
+
+
+  /* img {
+    width: 200px;
+    height: 10rem;
+    margin-bottom: 30px; 
+    margin-left: 70px; 
+     border-radius: px;  
+    border: 2px solid black; 
+  } */
+ 
+
+  /* Add border to the bottom on hover */
+  .col-1 a,
+  .col-2 a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+  }
+
+  /* Create a pseudo-element for the bottom border */
+  .col-1 a::after,
+  .col-2 a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px; /* Adjust the height of the border as needed */
+    background-color: #fff; /* Color of the border */
+    transform: scaleX(0); /* Initially, make it invisible by scaling down to zero width */
+    transition: transform 0.2s; /* Add a transition for the transform property */
+  }
+
+  /* Expand the border on hover */
+  .col-1 a:hover::after,
+  .col-2 a:hover::after {
+    transform: scaleX(1); /* Scale up the border to full width on hover */
+  }
+
+
+
+
+
+
+
+       
+
+    /* Add border to the bottom on hover */
+    .col-1 a,
+  .col-2 a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+  }
+
+  /* Create a pseudo-element for the bottom border */
+  .col-1 a::after,
+  .col-2 a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px; /* Adjust the height of the border as needed */
+    background-color: #fff; /* Color of the border */
+    transform: scaleX(0); /* Initially, make it invisible by scaling down to zero width */
+    transition: transform 0.2s; /* Add a transition for the transform property */
+  }
+
+  /* Expand the border on hover */
+  .col-1 a:hover::after,
+  .col-2 a:hover::after {
+    transform: scaleX(1); /* Scale up the border to full width on hover */
+  }
+
+  #form-style{
+    width:20rem;
+  }
+/* nav bar style */
+  .navbar {
+    background-color: #333;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+.navbar-nav {
+    margin-left: auto; /* Pushes the nav items to the right */
+}
+
+.navbar-nav .nav-link {
+    padding-right: 20px; /* Adds some spacing between the nav items */
+}
+
+.description{
+  margin-left: 50px;
+}
+
+.custom-dropdown {
+  width: 20px; /* Adjust the width as needed */
+}
+
+#description{
+  color: #f0f0f0;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+  pointer-events: none; /* This ensures that the overlay doesn't interfere with the click events on the image */
+}
+
+
