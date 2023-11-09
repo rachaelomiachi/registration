@@ -10,19 +10,20 @@
 
 
                                     <?php
-                                    // require_once './../includes/footer.php';
-                                    require_once 'register-inc.php';
-                                    require_once 'header.php';
+                                    
+                                    require_once './../connection/db.php';
+                                    require_once './../layout/header.php';
+                                    require_once './../layout/footer.php';
                                     ?>
 
                                     
                                         <?php
-                                        if ($user) {
-                                           echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                           <strong>oh sorry!</strong> Email is already taken.
-                                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                         </div>';
-                                        }
+                                        // if ($user) {
+                                        //    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        //    <strong>oh sorry!</strong> Email is already taken.
+                                        //    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        //  </div>';
+                                        // }
                                         ?>
 
 
@@ -31,7 +32,7 @@
                                     <h1>Register</h1>
                                     <p>Already have an account? <a href="login.php">Login Here</a></p>
 
-                                    <form action="register-inc.php" method="post">
+                                    <form action="./../includes/register-inc.php" method="post">
 
                                         <div class= "col-lg-12 col-sm-12 w-100% mb-3">
                                     <input type="text" name="firstname" placeholder="Firstname" style="width:50%; box-shadow: 0 0 10px #000; padding:5px; border-radius:5px">

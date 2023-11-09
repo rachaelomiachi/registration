@@ -1,5 +1,5 @@
 <?php
-require_once ('db.php')
+require_once ('./../connection/db.php')
 ?>
 <?php
 $success=0;
@@ -14,18 +14,18 @@ $cpassword=$_POST['cpassword'];
 
     //ERROR HANDLINGS AND EXCEPTIONS
 if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || empty($cpassword)){
-    header("Location: registration.php?error=emptyfields");
+    header("Location: ./create-user.php?error=emptyfields");
     exit();
 
 // ...
 } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $firstname) || !preg_match("/^[a-zA-Z0-9]*$/", $lastname)) {
-    header("Location: registration.php?error=invalidusername");
+    header("Location: ./create-user.php?error=invalidusername");
     exit();
     
 } elseif ($password !== $cpassword) {
 // ...
 
-    header("location:registration.php?error=passwordsdonotmatch");
+    header("location:./create-user.php?error=passwordsdonotmatch");
     exit();
   }
 
@@ -33,7 +33,7 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
     $sql = "SELECT email FROM users WHERE  email = ?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: registration.php?error=sqlerror");
+        header("location: ./create-user.php?error=sqlerror");
         exit();
     
     }else {
@@ -45,7 +45,7 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
         var_export($rowCount);
         // exit();
         if($rowCount > 0) {
-            header("location:registration.php?error=emailtaken");
+            header("location:./create-user.php?error=emailtaken");
                 exit();
             }
 
@@ -54,7 +54,7 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location:registration.php?error=sqlerror");
+            header("Location:./create-user.php?error=sqlerror");
             exit();
 
              }
@@ -65,7 +65,7 @@ if(empty($firstname) || empty($lastname) || empty($email)|| empty($password) || 
                 
                 mysqli_stmt_bind_param($stmt, "ssss", $firstname,$lastname, $email, $hashedpass);
                 mysqli_stmt_execute($stmt);
-                header("Location:login.php?success=registered");
+                header("Location:./../ui/login.php?success=registered");
                 exit();
                
                 }

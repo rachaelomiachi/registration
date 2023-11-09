@@ -1,12 +1,12 @@
 <?php
-require_once('../db.php');
-require_once('../header.php');
+require_once('./../connection/db.php');
+require_once('./../layout/header.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if the user is logged in
     if (isset($_SESSION['user_id'])) {
         $user_id = $_SESSION['user_id'];
-
+$
         // process order and insert into db
         $stmt = $conn->prepare("INSERT INTO orders (user_id, product_id, quantity, price) VALUES (?, ?, ?, ?)");
 
@@ -27,10 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo "Order placed successfully!";
         exit; 
-    } else {
-        echo "You not logged in. Please log in to place an order.";
-        exit;
-    }
+    } 
+    // else {
+    //     echo "You not logged in. Please log in to place an order.";
+    //     exit;
+    // }
 }
 ?>
 <div class=" container" style="background-color:light blue ">
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 ?>
             </div>
-            <form method="post" action="">
+            <form method="post" action="./../includes/order-inc.php">
                 <button type="submit">Place Order</button>
             </form>
         </div>

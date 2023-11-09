@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once './../connection/db.php';
 ?>
 
 <!DOCTYPE html>
@@ -134,34 +134,34 @@ require_once 'db.php';
 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="./food/photo/my-logo2.jpg" style="width:30%;" alt=""></a>
+        <a class="navbar-brand" href="index.php"><img src="./../food/photo/my-logo2.jpg" style="width:30%;" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="./../index.php">Home</a>
+                    <a class="nav-link" href="./../ui/index.php">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="./../login.php">Login</a>
+                    <a class="nav-link" href="./../ui/login.php">Login</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="./../create-user.php">Register</a>
+                    <a class="nav-link" href="./../ui/create-user.php">Register</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="./../food/product.php">Products</a>
+                    <a class="nav-link" href="./../ui/product.php">Products</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="./../food/product.php">Products</a>
+                    <a class="nav-link" href="./../ui/product.php">Products</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="./../food/show-food.php">Order Now</a>
+                    <a class="nav-link" href="./../ui/show-food.php">Order Now</a>
                 </li>
             </ul>
         </div>

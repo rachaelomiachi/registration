@@ -1,6 +1,6 @@
 <?php
-require_once('../db.php');
-require_once('../header.php');
+require_once('./../connection/db.php');
+require_once('./../layout/header.php');
 
 if(!$_SESSION['cart']){
     $_SESSION['cart'] = [];
@@ -52,7 +52,7 @@ if(!$_SESSION['cart']){
                            <tr>
                                <td>
                                    <div class="card" style="width: 20rem; margin:auto;">
-                                       <img src="<?php echo $file; ?>" class="card-img-top" style="width: 20rem; margin:auto; height:13rem; border-radius:12px " alt=""...>
+                                       <img src="./../food/<?php echo $file; ?>" class="card-img-top" style="width: 20rem; margin:auto; height:13rem; border-radius:12px " alt=""...>
                                    </div>
                                </td>
                                <td><?php echo $description; ?></td>

@@ -1,14 +1,14 @@
 
 
 <?php
-require_once 'db.php';
+require_once './../connection/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     if (empty($email) || empty($password)) {
-        header("Location: login.php?error=emptyfields");
+        header("Location: ./../ui/login.php?error=emptyfields");
         exit();
 
     } else {
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: login.php?error=sqlerror");
+            header("Location: ./../ui/login.php?error=sqlerror");
             exit();
 
         } else {
@@ -34,17 +34,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     session_start();
                     $_SESSION['sessionID'] = $row['id'];
                     $_SESSION['sessionUser'] = $row['email'];
-                    header("Location: index.php?success=loggedin");
+                    header("Location: ./../ui/index.php?success=loggedin");
                     exit();
                 // }
             } else {
-                header("Location: login.php?error=nouserfound");
+                header("Location: ./../ui/login.php?error=nouserfound");
                 exit();
             }
         }
     }
 } else {
-    header("Location: login.php?error=accessforbidden");
+    header("Location: ./../ui/login.php?error=accessforbidden");
     exit();
 }
-?>
+

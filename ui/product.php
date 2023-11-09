@@ -1,6 +1,6 @@
 <?php
-require_once('../db.php');
-require_once('../header.php');
+require_once('./../connection/db.php');
+require_once('./../layout/header.php');
 ?>
 
 

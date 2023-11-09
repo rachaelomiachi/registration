@@ -37,7 +37,7 @@ $maxFileSize = 5 * 1024 * 1024; // 5MB in bytes
     move_uploaded_file($_FILES['file']['tmp_name'], $upload_path);
 } else {
     // Handle the case where no file was uploaded
-    header("Location: product.php?error=nofile");
+    header("Location: ./../ui/product.php?error=nofile");
     exit();
 }
 
@@ -46,17 +46,17 @@ $maxFileSize = 5 * 1024 * 1024; // 5MB in bytes
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: product.php?error=sqlerror");
+            header("Location: ./../ui/product.php?error=sqlerror");
             exit();
         } else {
             mysqli_stmt_bind_param($stmt, "ssssi", $name, $description, $upload_path, $category_id, $price);
             mysqli_stmt_execute($stmt);
-            header("Location: product.php?success=entered");
+            header("Location: ./../ui/product.php?success=entered");
             exit();
         }
     } else {
         // Invalid file extension
-        header("Location: product.php?error=invalidfile");
+        header("Location: ./../ui/product.php?error=invalidfile");
         exit();
     }
 

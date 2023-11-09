@@ -7,8 +7,8 @@
 
                                     <?php
                                     // require_once './includes/footer.php';
-                                    require_once 'register-inc.php';
-                                    require_once 'header.php';
+                                    // require_once 'layout/register-inc.php';
+                                    require_once './../layout/header.php';
                                     // require_once './../food/login.php';
                                     ?>
 
@@ -19,7 +19,7 @@
                                     <h1>Login</h1>
                                     <p>Already have an account? <a href="registration.php">Register Here</a></p>
 
-                                    <form action="login-inc.php" method="post">
+                                    <form action="./../includes/login-inc.php" method="post">
                                         <div class="col-lg-12 col-sm-12 w-100% mb-3">
                                         <input type="email" name="email" placeholder="E-mail"  style="width:50%; box-shadow: 0 0 10px #000; padding:5px; border-radius:5px">
                                         </div>

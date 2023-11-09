@@ -1,6 +1,8 @@
 <?php
-require_once 'header.php';
-require_once ('db.php');
+require_once ('./../connection/db.php');
+require_once './../layout/header.php';
+require_once './../layout/footer.php';
+
 ?>
 
 
@@ -12,7 +14,7 @@ require_once ('db.php');
     <div class="carousel-item active" data-bs-interval="10000">
       <div class="carousel-overlay"></div>
       <!-- style="background:url('./food/photo/pexels-adonyi-gábor-1400172.jpg')" -->
-      <img src="./food/photo/gem-background1.jpg" class="d-block w-100" style="height: 35rem; margin-top: 17px;" alt="...">
+      <img src="./../food/photo/gem-background1.jpg" class="d-block w-100" style="height: 35rem; margin-top: 17px;" alt="...">
       <!-- Add the welcome text -->
       <div class="welcome-text col-sm-12">
         <span>Welcome to</span>
@@ -119,7 +121,7 @@ $result = mysqli_query($conn, $sql);
 
     <div class="col-lg-4 col-sm-12">
       <div class="card" style="">
-        <img src="./food/photo/kili-location.png" class="card-img-top mx-auto d-block" alt="...">
+        <img src="./../food/photo/kili-location.png" class="card-img-top mx-auto d-block" alt="...">
         <div class="card-body text-center">
           <h3 style="color: blue;">Select nearest location</h3>
           <h6>Select the state and restaurant closest to your pick-up/delivery location.</h6>
@@ -129,7 +131,7 @@ $result = mysqli_query($conn, $sql);
 
     <div class="col-lg-4 col-sm-12 mt-2">
       <div class="card" style="">
-        <img src="./food/photo/kili-menu.png" class="card-img-top mx-auto d-block" alt="...">
+        <img src="./../food/photo/kili-menu.png" class="card-img-top mx-auto d-block" alt="...">
         <div class="card-body text-center">
           <h3 style="color: blue;">Select nearest location</h3>
           <h6>Select the state and restaurant closest to your pick-up/delivery location.</h6>
@@ -139,7 +141,7 @@ $result = mysqli_query($conn, $sql);
 
     <div class="col-lg-4 col-sm-12 mt-2">
       <div class="card" style="">
-        <img src="./food/photo/kilidelivery.png" class="card-img-top mx-auto d-block" alt="...">
+        <img src="./../food/photo/kilidelivery.png" class="card-img-top mx-auto d-block" alt="...">
         <div class="card-body text-center">
           <h3 style="color: blue;">Select nearest location</h3>
           <h6>Select the state and restaurant closest to your pick-up/delivery location.</h6>
@@ -154,28 +156,44 @@ $result = mysqli_query($conn, $sql);
    
 
 <!-- footer -->
-<div class="container-fluid bg-dark">
-  <div class="row" style="height: 22rem; margin-top:2rem;" >
+<div class="container-fluid bg-dark  pb-5">
+  <div class="row d-flex justify-content-center align-items-center"  >
 
-  <div class="col-4">
-    <!-- <img src="./food/photo/kili-google.png" style="width:100%" alt=""> -->
-    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <!-- <div class="col-4">
+    <img src="./food/photo/kili-google.png" style="width:100%" alt="">
+    </div> -->
   
    
-    <div class="col-lg-2 col-sm-6" style="margin-top:3%">
-    <img src="./food/photo/kili-apple.png" style="width:100%; margin-right:auto" alt="">
+    <!-- <div class="col-lg-2 col-sm-6" style="margin-top:3%">
+    <img src="./../food/photo/kili-apple.png" style="width:100%; margin-right:auto" alt="">
+    </div> -->
+
+   
+
+    <img src="./../food/images/5365678_fb_facebook_facebook logo_icon.png"  class="mx-1" style="margin-top:5rem" alt="">
+   
+
+    <img src="./../food/images/5296516_tweet_twitter_twitter logo_icon (1).png"  class="mx-1"  style="margin-top:5rem" alt="">
+    
+
+    <img src="./../food/images/5296765_camera_instagram_instagram logo_icon.png" class="mx-1" style="margin-top:5rem" alt="">
+    
+      
+      <img src="./../food/images/5296521_play_video_vlog_youtube_youtube logo_icon.png" class="mx-1" style="margin-top:5rem" alt="">
     </div>
 
-    <div class="col-lg-2 col-sm-6" style="margin-top:3%">
-    <img src="./food/photo/kili-google.png" style="width:100%;" alt="">
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center" style="height: 10vh;">
-    <div class=" col-sm-6 text-center">
-        <input type="text" class="form-control" placeholder="Email required for extra cullinary services" style="width: 35rem; color:blue;">
-        <input type="text" class="form-control d-flex justify-content-center align-items-center" placeholder="Send" style="width: 20rem; background-color:blue; color:white">
-    </div>
+    <div class=" mt-5 col-12 d-flex justify-content-center align-items-center">
+    <!-- <div class="row">
+      <div class="col-2"> -->
+        <img src="food/images/5365678_fb_facebook_facebook logo_icon.png" alt="">
+        <div class="  text-center">
+          <input type="text" class="form-control mb-3" placeholder="Email required for extra cullinary services" style="width: 50vw; color:blue;">
+          <input type="text" class="form-control" placeholder="Send" style="width: 50vw; background-color:blue; color:white; margin-top:0;">
+        </div>
+      </div>
 </div>
+<!-- </div> -->
 
 <!-- <div class="container d-flex justify-content-center align-items-center" style="height: 10vh;">
     <div class="text-center">
@@ -197,13 +215,7 @@ $result = mysqli_query($conn, $sql);
 
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
-           
-            </body>
-            </html>
 
 
  <!-- <td><img src="' . $file . '" alt="' . $name . '"/></td> -->
